@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Rating } from '@smastrom/react-rating'
+
+import '@smastrom/react-rating/style.css'
+
 
 const RecipeCard = ({ recipe }) => {
 
-    const { image, recipe_name, ingredients, cooking_method, chef_id } = recipe
+    const { image, recipe_name, ingredients, cooking_method, chef_id, rating } = recipe
     console.log((recipe));
 
     return (
@@ -13,6 +17,11 @@ const RecipeCard = ({ recipe }) => {
             <p className='text-gray-600 text-lg pt-3 border-b pb-3'><span className='text-black font-semibold'>Ingredients:</span> {ingredients}</p>
             <p className='text-gray-600 text-lg pt-3'><span className='text-black font-semibold'>Ingredients:</span> {ingredients}</p>
             <p><span className='text-black font-semibold'>Cooking method:</span> {cooking_method}</p>
+            <div className='pt-3 flex items-center gap-2'>
+                <p>Rating: </p>
+                <p >{rating}</p>
+                <Rating style={{ maxWidth: 120 }} value={rating} readOnly />
+            </div>
             <button className="text-blue-600 pt-3">
                 <Link to={`/chefs/${chef_id}`}>Chef: {chef_id}</Link>
             </button>
