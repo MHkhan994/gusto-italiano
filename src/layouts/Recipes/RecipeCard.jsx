@@ -14,7 +14,7 @@ const RecipeCard = ({ recipe }) => {
             <p className='text-gray-600 text-lg pt-3'><span className='text-black font-semibold'>Ingredients:</span> {ingredients}</p>
             <p><span className='text-black font-semibold'>Cooking method:</span> {cooking_method}</p>
             <button className="text-blue-600 pt-3">
-                <Link to={'/chefs'}>Chef: {chef_id}</Link>
+                <Link to={`/chefs/${chef_id}`}>Chef: {chef_id}</Link>
             </button>
         </div>
     );
