@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*{
+    box-sizing: border-box;
+}
+
+.container{
+    @apply w-11/12 lg:w-[80%] mx-auto
+}
+
+.btn-primary{
+    transition: all ease-in .2s;
+    @apply text-white bg-[#d64b21] px-8 py-2 text-xl rounded-sm
+}
+
+.btn-primary:hover{
+    @apply text-[#d64b21] bg-white
+}
+
+.active{
+    @apply border-b-4 border-[#d64b21] py-1
+}
