@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Rating } from '@smastrom/react-rating'
+import { FaHeart } from 'react-icons/fa';
 
 import '@smastrom/react-rating/style.css'
 
@@ -21,6 +22,7 @@ const RecipeCard = ({ recipe }) => {
                 <p>Rating: </p>
                 <p >{rating}</p>
                 <Rating style={{ maxWidth: 120 }} value={rating} readOnly />
+                <FaHeart />
             </div>
             <button className="text-blue-600 pt-3">
                 <Link to={`/chefs/${chef_id}`}>Chef: {chef_id}</Link>
