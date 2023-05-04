@@ -1,13 +1,13 @@
 import React, { createContext } from 'react';
-import Carosol from './Carosol';
 import Chefs from './Chefs/Chefs'
+import Header from './Header/Header';
 
 
 const Home = () => {
     return (
         <div>
             <div className=''>
-                {/* <Carosol></Carosol> */}
+                <Header></Header>
                 <Chefs></Chefs>
             </div>
         </div>

@@ -1,12 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400;1,500&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400;1,500&display=swap');
 
 *{
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 .container{
@@ -15,11 +19,11 @@
 
 .btn-primary{
     transition: all ease-in .2s;
-    @apply text-white bg-[#d64b21] px-8 py-2 text-xl rounded-sm
+    @apply text-white bg-[#d64b21] px-8 py-2 text-xl rounded-sm border border-transparent
 }
 
 .btn-primary:hover{
-    @apply text-[#d64b21] bg-white
+    @apply text-[#d64b21] bg-white border border-orange-500
 }
 
 .active{
