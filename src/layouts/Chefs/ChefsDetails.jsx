@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { ScrollRestoration, useLoaderData, useParams } from 'react-router-dom';
 import { ChefsContext } from '../Main';
 import RecipeCard from '../Recipes/RecipeCard';
 
@@ -51,6 +51,7 @@ const ChefsDetails = () => {
                     }
                 </div>
             </div>
+            <ScrollRestoration />
         </div>
     );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { ScrollRestoration, useLoaderData } from 'react-router-dom';
 import RecipeCard from './RecipeCard';
 
 const Recipes = () => {
@@ -13,6 +13,7 @@ const Recipes = () => {
                     recipes.map(recipe => <RecipeCard key={recipe.name} recipe={recipe}></RecipeCard>)
                 }
             </div>
+            <ScrollRestoration />
         </div>
     );
 };
