@@ -12,6 +12,7 @@ const ChefsDetails = () => {
 
     const { name, picture, recipes, likes, experience, bio } = chef
 
+
     return (
         <div className='pt-16'>
             <div className="container">

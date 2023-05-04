@@ -45,14 +45,9 @@ const AuthProvider = ({ children }) => {
 
     // get loogged in user 
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            if (currentUser) {
-                setUser(currentUser)
-                setLoading(false)
-            }
-            else {
-                setUser(null)
-            }
+        const unsubscribe = onAuthStateChanged(auth, loggedUser => {
+            setUser(loggedUser)
+            setLoading(false)
         })
 
         return () => unsubscribe()

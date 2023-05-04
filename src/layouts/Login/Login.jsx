@@ -38,7 +38,7 @@ const Login = () => {
         <div className='container'>
             <div className='grid lg:grid-cols-2 pt-16'>
                 <div>
-                    <img src="/public/login-banner.jpg" alt="" />
+                    <img src="login-banner.jpg" alt="" />
                 </div>
                 <div>
 

@@ -61,7 +61,7 @@ const Register = () => {
             <div className='container'>
                 <div className='grid lg:grid-cols-2 pt-16'>
                     <div>
-                        <img src="/public/register-banner.jpg" alt="" />
+                        <img src="register-banner.jpg" alt="" />
                     </div>
                     <div>
                         <form onSubmit={handleRegister} className='flex flex-col p-8'>

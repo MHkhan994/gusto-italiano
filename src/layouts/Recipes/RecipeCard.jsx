@@ -12,7 +12,7 @@ const RecipeCard = ({ recipe }) => {
 
     const { image, recipe_name, ingredients, cooking_method, chef_id, rating } = recipe
     const [isDisabled, setIsDisabled] = useState(false)
-    console.log(recipe);
+
 
     const handleFavourite = e => {
         toast.success('A favourite Recipe', {
