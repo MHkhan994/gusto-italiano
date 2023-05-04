@@ -1,12 +1,14 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext)
+    const { createUser, profileUpdate } = useContext(AuthContext)
     const [error, setError] = useState('')
+    const navigate = useNavigate()
 
 
     const handleRegister = e => {
@@ -31,8 +33,12 @@ const Register = () => {
             return
         }
         createUser(email, password)
-            .then(() => {
-                toast.success('Registration successfull, go to Login', {
+            .then((result) => {
+                result.user && updateProfile(result.user, {
+                    displayName: name,
+                    photoURL: photo
+                })
+                toast.success('Registration successfull', {
                     position: "top-center",
                     autoClose: 1000,
                     hideProgressBar: true,
@@ -42,8 +48,11 @@ const Register = () => {
                     progress: undefined,
                     theme: "light",
                 });
+                setTimeout(() => {
+                    navigate('/login')
+                }, 1000);
             })
-            .catch(error => console.log(error))
+            .catch(error => setError(error.message))
     }
 
 

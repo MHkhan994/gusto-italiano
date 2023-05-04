@@ -1,10 +1,11 @@
 import React, { useCallback, useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Login = () => {
     const { logIn } = useContext(AuthContext)
     const [error, setError] = useState('')
+    const navigate = useNavigate()
 
     const handleLogin = e => {
         e.preventDefault()
@@ -13,7 +14,8 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         logIn(email, password)
-            .then(result => console.log(result.user))
+            .then(() => navigate('/'))
+            .catch(error => setError(error.message))
     }
 
     return (
@@ -39,6 +41,7 @@ const Login = () => {
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
                         </div>
+                        <p className='text-red-500'>{error}</p>
                         <div className="form-control">
                             <button className="btn btn-primary">Login</button>
                         </div>
