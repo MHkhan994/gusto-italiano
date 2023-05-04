@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Rating } from '@smastrom/react-rating'
 import { FaHeart } from 'react-icons/fa';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import '@smastrom/react-rating/style.css'
 
@@ -9,7 +11,21 @@ import '@smastrom/react-rating/style.css'
 const RecipeCard = ({ recipe }) => {
 
     const { image, recipe_name, ingredients, cooking_method, chef_id, rating } = recipe
-    console.log((recipe));
+    const [isDisabled, setIsDisabled] = useState(false)
+
+    const handleFavourite = e => {
+        toast.success('A favourite Recipe', {
+            position: "top-center",
+            autoClose: 1000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: false,
+            progress: undefined,
+            theme: "light",
+        });
+        setIsDisabled(true)
+    }
 
     return (
         <div className='border border-orange-500 p-4 rounded-md'>
@@ -22,11 +38,23 @@ const RecipeCard = ({ recipe }) => {
                 <p>Rating: </p>
                 <p >{rating}</p>
                 <Rating style={{ maxWidth: 120 }} value={rating} readOnly />
-                <FaHeart />
+                <button disabled={isDisabled} onClick={handleFavourite} className='ms-auto text-xl'><FaHeart className={isDisabled ? 'text-red-700' : ''}></FaHeart></button>
             </div>
             <button className="text-blue-600 pt-3">
                 <Link to={`/chefs/${chef_id}`}>Chef: {chef_id}</Link>
             </button>
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
         </div>
     );
 };

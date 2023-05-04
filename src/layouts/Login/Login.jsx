@@ -41,27 +41,19 @@ const Login = () => {
                     <img src="/public/login-banner.jpg" alt="" />
                 </div>
                 <div>
-                    <form onSubmit={handleLogin} className='flex flex-col justify-center gap-4 px-8'>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Email</span>
-                            </label>
-                            <input type="email" name='email' placeholder="email" className="input input-bordered" required />
+
+                    <form onSubmit={handleLogin} className='flex flex-col p-8'>
+                        <div className="mb-6">
+                            <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                            <input type="email" name='email' placeholder="email" className="input input-bordered w-full" required />
                         </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Password</span>
-                            </label>
-                            <input type="password" name='password' placeholder="password" className="input input-bordered" required />
-                            <label className="label pt-3">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                            </label>
+                        <div className="mb-6">
+                            <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
+                            <input type="password" name='password' placeholder="password" className="input input-bordered w-full" required />
                         </div>
-                        <p className='text-red-500'>{error}</p>
-                        <div className="form-control">
-                            <button className="btn btn-primary">Login</button>
-                        </div>
+                        <button className='btn-primary'>Login</button>
                     </form>
+
                     <div className='flex flex-col p-8'>
                         <button onClick={handleGoogleLogin} className="text-white  bg-blue-500 px-8 py-2 text-xl rounded-sm border border-transparent">Login With Google <FaGoogle className='inline' /></button>
                         <button onClick={handleGitLogin} className="text-white bg-gray-500 mt-3 px-8 py-2 text-xl rounded-sm border border-transparent">Login With Github <FaGithub className='inline' /></button>
@@ -76,3 +68,6 @@ const Login = () => {
 };
 
 export default Login;
+
+{/* <input type="password" name='password' placeholder="password" className="input input-bordered" required /> */ }
+{/* <input type="email" name='email' placeholder="email" className="input input-bordered" required /> */ }

@@ -1,7 +1,6 @@
 import React, { useCallback, useContext } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
-import { FaUser } from 'react-icons/fa';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
@@ -15,7 +14,7 @@ const Navbar = () => {
 
     return (
         <div className='py-7 bg-black'>
-            <div className='container'>
+            <div className='container relative'>
                 <div className='flex justify-between text-white items-center'>
                     <Link to='/' className='text-xl lg:text-3xl font-semibold'>Gusto Italiano</Link>
                     <div className='flex justify-between gap-10 text-lg items-center'>
@@ -25,7 +24,11 @@ const Navbar = () => {
                     </div>
                     <div className='flex items-center gap-5'>
                         {
-                            user?.photoURL ? <img className='h-7 w-7 rounded-full' src={user.photoURL}></img> : <FaUser className='text-black bg-white h-7 w-7 rounded-full'></FaUser>
+                            user?.photoURL ? <>
+                                <img className='userImg h-7 w-7 rounded-full' src={user.photoURL}></img>
+                                <p className='hide absolute -bottom-7 right-32 bg-white text-black rounded-sm px-3 py-1'>{user.displayName}</p>
+                            </> :
+                                ''
                         }
                         {
                             user ? <button onClick={handleLogOut} className='btn-primary'>Logout</button> :

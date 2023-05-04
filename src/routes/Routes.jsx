@@ -7,11 +7,13 @@ import ChefsDetails from "../layouts/Chefs/ChefsDetails";
 import Login from "../layouts/Login/Login";
 import Register from "../layouts/Login/Register";
 import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../layouts/Errorpage/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement: <ErrorPage></ErrorPage>,
         loader: () => fetch('https://gusto-italiano-server-mhkhan994.vercel.app/'),
         children: [
             {

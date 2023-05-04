@@ -29,3 +29,13 @@ html{
 .active{
     @apply border-b-4 border-[#d64b21] py-1
 }
+
+.hide {
+    display: none;
+}
+
+.userImg:hover + .hide {
+    cursor: pointer;
+    display: block;
+    color: red;
+  }

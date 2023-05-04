@@ -4,7 +4,6 @@ import ChefsCard from './ChefsCard';
 
 const Chefs = () => {
     const chefs = useContext(ChefsContext)
-    console.log(chefs);
     return (
         <div>
             <h1 className='text-center text-4xl font-semibold pt-16'>Our Amaizing Chefs</h1>

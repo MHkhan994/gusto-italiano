@@ -64,39 +64,27 @@ const Register = () => {
                         <img src="/public/register-banner.jpg" alt="" />
                     </div>
                     <div>
-                        <form onSubmit={handleRegister} className='flex flex-col h-full justify-center gap-4 px-8'>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Name</span>
-                                </label>
-                                <input type="text" name='name' placeholder="Your Name" className="input input-bordered" required />
+                        <form onSubmit={handleRegister} className='flex flex-col p-8'>
+                            <div className="mb-6">
+                                <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                                <input type="text" name='name' placeholder="Your Name" className="input input-bordered w-full" required />
                             </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Photo URL</span>
-                                </label>
-                                <input type="text" name='photo' placeholder="Your Photo" className="input input-bordered" required />
+                            <div className="mb-6">
+                                <label htmlFor="photo" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                                <input type="text" name='photo' placeholder="Your Photo" className="input input-bordered w-full" required />
                             </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Email</span>
-                                </label>
-                                <input type="email" name='email' placeholder="email" className="input input-bordered" required />
+                            <div className="mb-6">
+                                <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                                <input type="email" name='email' placeholder="email" className="input input-bordered w-full" required />
                             </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Password</span>
-                                </label>
-                                <input type="password" name='password' placeholder="password" className="input input-bordered" required />
-                                <p className='text-red-500'>{error}</p>
+                            <div className="mb-6">
+                                <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
+                                <input type="password" name='password' placeholder="password" className="input input-bordered w-full" required />
                             </div>
-                            <div className="form-control mt-6">
-                                <button className="btn btn-primary">Register</button>
-                            </div>
+                            <button className='btn-primary'>Register</button>
                             <button className='text-xl'>
                                 <small>Already have an Account? <Link className='text-blue-600' to='/login'>Login</Link></small>
                             </button>
-
                         </form>
                     </div>
                 </div>
@@ -118,3 +106,6 @@ const Register = () => {
 };
 
 export default Register;
+
+{/* <input type="text" name='name' placeholder="Your Name" className="input input-bordered" required /> */ }
+{/* <input type="text" name='photo' placeholder="Your Photo" className="input input-bordered" required /> */ }

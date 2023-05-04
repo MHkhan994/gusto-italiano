@@ -11,7 +11,6 @@ const ChefsDetails = () => {
 
     const { name, picture, chef_id, likes, experience, bio } = chef
 
-    console.log(recipes, chef);
     return (
         <div className='pt-16'>
             <div className="container">
