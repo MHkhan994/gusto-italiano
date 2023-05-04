@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { ScrollRestoration, useLoaderData, useParams } from 'react-router-dom';
 import { ChefsContext } from '../Main';
 import RecipeCard from '../Recipes/RecipeCard';
+import LazyLoad from 'react-lazy-load';
 
 const ChefsDetails = () => {
     const { id } = useParams()
@@ -15,7 +16,7 @@ const ChefsDetails = () => {
         <div className='pt-16'>
             <div className="container">
                 <div className='grid grid-cols-1 lg:grid-cols-[4fr_3fr] gap-10'>
-                    <img src={picture} alt="" />
+                    <LazyLoad offset={300}><img src={picture} alt="" /></LazyLoad>
                     <div className="flex flex-col justify-center h-full">
                         <h2 className='text-3xl italic font-semibold'>{name}</h2>
                         <p className='italic text-md pt-3'>{bio}</p>
