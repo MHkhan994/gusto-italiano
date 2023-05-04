@@ -1,12 +1,16 @@
 import React, { useCallback, useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { FaGoogle, FaGithub } from 'react-icons/fa';
 
 const Login = () => {
-    const { logIn } = useContext(AuthContext)
+    const { logIn, logInGoogle, logInGithub } = useContext(AuthContext)
     const [error, setError] = useState('')
     const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state ? location.state.from : '/'
 
+    // email pass login
     const handleLogin = e => {
         e.preventDefault()
         setError('')
@@ -14,8 +18,20 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         logIn(email, password)
-            .then(() => navigate('/'))
+            .then(() => navigate(from))
             .catch(error => setError(error.message))
+    }
+
+    // google login
+    const handleGoogleLogin = () => {
+        logInGoogle()
+            .then(() => navigate(from))
+    }
+
+    // github sign in
+    const handleGitLogin = () => {
+        logInGithub()
+            .then(() => navigate(from))
     }
 
     return (
@@ -25,7 +41,7 @@ const Login = () => {
                     <img src="/public/login-banner.jpg" alt="" />
                 </div>
                 <div>
-                    <form onSubmit={handleLogin} className='flex flex-col h-full justify-center gap-4 px-8'>
+                    <form onSubmit={handleLogin} className='flex flex-col justify-center gap-4 px-8'>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -45,13 +61,17 @@ const Login = () => {
                         <div className="form-control">
                             <button className="btn btn-primary">Login</button>
                         </div>
+                    </form>
+                    <div className='flex flex-col p-8'>
+                        <button onClick={handleGoogleLogin} className="text-white  bg-blue-500 px-8 py-2 text-xl rounded-sm border border-transparent">Login With Google <FaGoogle className='inline' /></button>
+                        <button onClick={handleGitLogin} className="text-white bg-gray-500 mt-3 px-8 py-2 text-xl rounded-sm border border-transparent">Login With Github <FaGithub className='inline' /></button>
                         <button className='text-xl'>
                             <small>New to Gusta Italiano? <Link className='text-blue-600' to='/register'>Register</Link></small>
                         </button>
-                    </form>
+                    </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
