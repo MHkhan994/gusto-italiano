@@ -4,6 +4,7 @@ import RecipeCard from './RecipeCard';
 
 const Recipes = () => {
     const recipes = useLoaderData()
+    console.log(recipes);
 
     return (
         <div>

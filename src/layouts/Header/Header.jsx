@@ -32,19 +32,19 @@ const Header = () => {
                     modules={[Autoplay, Pagination]}
                 >
                     <SwiperSlide>
-                        <img src="/public/banner1.jpg" alt="" />
+                        <img src="banner1.jpg" alt="" />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="/public/banner-2.jpg" alt="" />
+                        <img src="banner-2.jpg" alt="" />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="/public/banner-3.jpg" alt="" />
+                        <img src="banner-3.jpg" alt="" />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="/public/banner-4.jpg" alt="" />
+                        <img src="banner-4.jpg" alt="" />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="/public/banner-5.jpg" alt="" />
+                        <img src="banner-5.jpg" alt="" />
                     </SwiperSlide>
                 </Swiper>
             </div>
