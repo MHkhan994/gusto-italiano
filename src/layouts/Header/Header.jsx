@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <div className='container grid grid-cols-1 lg:grid-cols-2 gap-4 pt-10'>
+        <div className='container grid grid-cols-1 lg:grid-cols-2 gap-4 lg:pt-10 pt-5'>
             <div className='order-2 lg:order-1 flex flex-col justify-center h-full gap-4'>
                 <h2 className='text-4xl'>Taste the Passion of Italy</h2>
                 <p>From our handmade pastas to our wood-fired pizzas, every bite at our restaurant is infused with the passion and spirit of Italy, transporting you to a world of sun-kissed vineyards, rolling hills, and bustling markets.</p>
