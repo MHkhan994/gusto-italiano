@@ -8,6 +8,7 @@ import Login from "../layouts/Login/Login";
 import Register from "../layouts/Login/Register";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../layouts/Errorpage/ErrorPage";
+import Reviews from "../layouts/Reviews";
 
 const router = createBrowserRouter([
     {
@@ -18,7 +19,8 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: () => fetch('https://gusto-italiano-server-mhkhan994.vercel.app/reviews')
             },
             {
                 path: '/login',

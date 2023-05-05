@@ -33,7 +33,6 @@ const RecipeCard = ({ recipe }) => {
             <img className='rounded-md' src={image} alt="" />
             <h2 className='text-2xl font-bold pt-4 text-rose-700 border-b pb-3'>{recipe_name}</h2>
             <p className='text-gray-600 text-lg pt-3 border-b pb-3'><span className='text-black font-semibold'>Ingredients:</span> {ingredients}</p>
-            <p className='text-gray-600 text-lg pt-3'><span className='text-black font-semibold'>Ingredients:</span> {ingredients}</p>
             <p><span className='text-black font-semibold'>Cooking method:</span> {cooking_method}</p>
             <div className='pt-3 flex items-center gap-2'>
                 <p>Rating: </p>

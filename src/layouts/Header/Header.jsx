@@ -27,7 +27,7 @@ const Header = () => {
                     pagination={{ clickable: true }}
                     autoplay={{
                         delay: 2500,
-                        disableOnInteraction: false,
+                        disableOnInteraction: true,
                     }}
                     modules={[Autoplay, Pagination]}
                 >

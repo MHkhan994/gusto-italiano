@@ -61,7 +61,7 @@ const ChefsDetails = () => {
                 <h1 className='text-center text-4xl font-semibold pt-16'>Best of {name}</h1>
                 <div className='grid lg:grid-cols-2 grid-cols-1 gap-5 pt-10'>
                     {
-                        chefRecipes.map(recipe => <RecipeCard key={recipe.name} recipe={recipe}></RecipeCard>)
+                        chefRecipes.map(recipe => <RecipeCard key={recipe.recipe_name} recipe={recipe}></RecipeCard>)
                     }
                 </div>
             </div>

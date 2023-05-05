@@ -11,7 +11,7 @@ const Recipes = () => {
             <h1 className='text-center text-4xl font-semibold pt-16'>Featured Recipes</h1>
             <div className='grid lg:grid-cols-2 grid-cols-1 container gap-5 pt-10'>
                 {
-                    recipes.map(recipe => <RecipeCard key={recipe.name} recipe={recipe}></RecipeCard>)
+                    recipes.map(recipe => <RecipeCard key={recipe.recipe_name} recipe={recipe}></RecipeCard>)
                 }
             </div>
             <ScrollRestoration />

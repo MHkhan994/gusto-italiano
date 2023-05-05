@@ -38,4 +38,8 @@ html{
     cursor: pointer;
     display: block;
     color: red;
-  }
+}
+
+.mySwiper{
+    background: url('/public/banner1.jpg') cover;
+}
