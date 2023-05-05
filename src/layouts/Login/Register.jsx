@@ -20,6 +20,8 @@ const Register = () => {
         const photo = form.photo.value;
         const name = form.name.value;
 
+        setError('')
+
         if (!/(?=.*[0-9])/.test(password)) {
             setError('password should contain at least one number')
             return
@@ -66,12 +68,12 @@ const Register = () => {
                     <div>
                         <form onSubmit={handleRegister} className='flex flex-col p-8'>
                             <div className="mb-6">
-                                <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                                <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Name</label>
                                 <input type="text" name='name' placeholder="Your Name" className="input input-bordered w-full" required />
                             </div>
                             <div className="mb-6">
-                                <label htmlFor="photo" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
-                                <input type="text" name='photo' placeholder="Your Photo" className="input input-bordered w-full" required />
+                                <label htmlFor="photo" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Photo</label>
+                                <input type="text" name='photo' placeholder="Photo URL" className="input input-bordered w-full" required />
                             </div>
                             <div className="mb-6">
                                 <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
@@ -79,7 +81,8 @@ const Register = () => {
                             </div>
                             <div className="mb-6">
                                 <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
-                                <input type="password" name='password' placeholder="password" className="input input-bordered w-full" required />
+                                <input type="password" name='password' placeholder="at least 1 uppercase, 1 number, 8 characters" className="input input-bordered w-full" required />
+                                <p className='text-red-600'>{error}</p>
                             </div>
                             <button className='btn-primary'>Register</button>
                             <button className='text-xl'>

@@ -19,19 +19,21 @@ const Login = () => {
         const password = form.password.value;
         logIn(email, password)
             .then(() => navigate(from))
-            .catch(error => setError(error.message))
+            .catch(() => setError('Invalid Email or Password'))
     }
 
     // google login
     const handleGoogleLogin = () => {
         logInGoogle()
             .then(() => navigate(from))
+            .catch(error => set(error.message))
     }
 
     // github sign in
     const handleGitLogin = () => {
         logInGithub()
             .then(() => navigate(from))
+            .catch(error => setError(error.message))
     }
 
     return (
@@ -50,6 +52,7 @@ const Login = () => {
                         <div className="mb-6">
                             <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
                             <input type="password" name='password' placeholder="password" className="input input-bordered w-full" required />
+                            <p className='pt-2 text-red-500'>{error}</p>
                         </div>
                         <button className='btn-primary'>Login</button>
                     </form>
